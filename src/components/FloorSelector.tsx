@@ -17,7 +17,7 @@ const FloorSelector: React.FC<FloorSelectorProps> = ({ floors, selectedFloor, on
             {floors.map((floor) => (
                 <button
                     key={floor.id}
-                    className={`px-4 py-2 border rounded ${selectedFloor === floor.id ? "bg-blue-500 text-white" : "bg-gray-200"}`}
+                    className={`px-6 py-3 border rounded text-lg md:text-base ${selectedFloor === floor.id ? "bg-blue-500 text-white" : "bg-gray-200"}`}
                     onClick={() => onSelectFloor(floor.id)}
                 >
                     {floor.name}

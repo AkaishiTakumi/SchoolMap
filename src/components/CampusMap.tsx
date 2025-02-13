@@ -21,23 +21,23 @@ const CampusMap: React.FC = () => {
                 selectedFloor={selectedFloor} 
                 onSelectFloor={setSelectedFloor} 
             />
-
-            <div className="flex gap-8">
+    
+            <div className="flex flex-col md:flex-row gap-8 w-full">
                 {/* 校内マップ */}
                 <FloorMap 
                     floor={currentFloor} 
                     selectedRoom={selectedRoom} 
                     onSelectRoom={setSelectedRoom} 
                 />
-
-                <div className="flex flex-col gap-4">
+    
+                <div className="flex flex-col gap-4 w-full max-w-md">
                     {/* 部屋一覧 */}
                     <RoomList 
                         rooms={currentFloor.rooms} 
                         selectedRoom={selectedRoom} 
                         onSelectRoom={setSelectedRoom} 
                     />
-
+    
                     {/* 部屋の詳細 */}
                     <RoomDetails selectedRoom={selectedRoom} />
                 </div>

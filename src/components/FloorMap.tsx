@@ -9,8 +9,8 @@ type FloorMapProps = {
 
 const FloorMap: React.FC<FloorMapProps> = ({ floor, selectedRoom, onSelectRoom }) => {
     return (
-        <div className="relative border p-2">
-            <svg width="300" height="300" className="border">
+        <div className="relative border p-2 w-full max-w-md">
+            <svg viewBox="0 0 300 300" className="w-full h-auto">
                 {/* 背景 */}
                 <rect width="300" height="300" fill="#f4f4f4" />
 
