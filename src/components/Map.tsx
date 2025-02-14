@@ -1,21 +1,19 @@
 import React from "react";
 import { Floor, Room } from "../data/floors";
 
-type FloorMapProps = {
-    floor: Floor;
-    selectedRoom: Room | null;
-    onSelectRoom: (room: Room) => void;
-    highlightedRooms?: string[];
-};
+interface MapProps {
+    currentFloor: Floor;
+    highlighted: string[];
+    setRoom: (room: Room) => void;
+}
 
-const FloorMap: React.FC<FloorMapProps> = ({ floor, selectedRoom, onSelectRoom, highlightedRooms = [] }) => {
+const Map: React.FC<MapProps> = ({ currentFloor, highlighted, setRoom }) => {
     return (
         <div className="relative border p-2 w-full max-w-md">
             <svg viewBox="0 0 300 300" className="w-full h-auto">
                 <rect width="300" height="300" fill="#f4f4f4" />
 
-                {/* 廊下の描画 */}
-                {floor.corridorType === "H" ? (
+                {currentFloor.corridorType === "H" ? (
                     <>
                         <rect x="90" y="0" width="40" height="130" fill="#ccc" />
                         <rect x="90" y="170" width="40" height="130" fill="#ccc" />
@@ -28,10 +26,8 @@ const FloorMap: React.FC<FloorMapProps> = ({ floor, selectedRoom, onSelectRoom, 
                     </>
                 )}
 
-                {/* 部屋の描画 */}
-                {floor.rooms.map((room) => {
-                    const isHighlighted = highlightedRooms.includes(room.id);
-                    const isSelected = selectedRoom?.id === room.id;
+                {currentFloor.rooms.map((room) => {
+                    const isHighlighted = highlighted.includes(room.id);
                     return (
                         <rect
                             key={room.id}
@@ -40,17 +36,16 @@ const FloorMap: React.FC<FloorMapProps> = ({ floor, selectedRoom, onSelectRoom, 
                             width={room.width}
                             height={room.height}
                             fill={room.fill}
-                            stroke={isSelected ? "yellow" : "black"}
-                            strokeWidth={isSelected ? 3 : 1}
-                            opacity={highlightedRooms.length > 0 && !isHighlighted ? 0.3 : 1}
-                            onClick={() => onSelectRoom(room)}
+                            stroke={isHighlighted ? "blue" : "black"}
+                            strokeWidth={isHighlighted ? 3 : 1}
+                            opacity={highlighted.length > 0 && !isHighlighted ? 0.3 : 1}
+                            onClick={() => setRoom(room)}
                             className="cursor-pointer hover:fill-blue-500"
                         />
                     );
                 })}
 
-                {/* 部屋の名前表示 */}
-                {floor.rooms.map((room) => (
+                {currentFloor.rooms.map((room) => (
                     <text key={room.id} x={room.x} y={room.y - 5} fontSize="10" fill="black">
                         {room.name}
                     </text>
@@ -60,4 +55,4 @@ const FloorMap: React.FC<FloorMapProps> = ({ floor, selectedRoom, onSelectRoom, 
     );
 };
 
-export default FloorMap;
+export default Map;

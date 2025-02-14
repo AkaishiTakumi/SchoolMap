@@ -1,22 +1,18 @@
-import React, { useState } from "react";
+import React from "react";
 
-type SearchBarProps = {
-    onSearch: (query: string) => void;
-};
+interface SearchBarProps {
+    search: string;
+    setSearch: (value: string) => void;
+    handleSearch: () => void;
+}
 
-const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
-    const [query, setQuery] = useState("");
-
-    const handleSearch = () => {
-        onSearch(query);
-    };
-
+const SearchBar: React.FC<SearchBarProps> = ({ search, setSearch, handleSearch }) => {
     return (
         <div className="flex gap-2 mb-4 w-full max-w-md">
             <input
                 type="text"
-                value={query}
-                onChange={(e) => setQuery(e.target.value)}
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
                 className="border p-2 rounded w-full"
                 placeholder="部屋名またはフロア名を入力..."
             />
