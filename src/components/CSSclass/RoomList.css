@@ -1,0 +1,16 @@
+.room-row {
+    cursor: pointer;
+    border: 1px solid transparent;
+    background-color: transparent;
+}
+.room-row:hover {
+    border-color: #646cff;
+}
+.room-row:focus,
+.room-row:focus-visible {
+    outline: 4px auto -webkit-focus-ring-color;
+}
+.room-row.selected {
+    background-color: #7c2d12;
+    border-color: transparent;
+}

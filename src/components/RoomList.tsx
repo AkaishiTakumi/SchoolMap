@@ -1,5 +1,6 @@
 import React from "react";
-import { Room } from "../data/floors";
+import { Room } from "../data/rooms";
+import "./CSSclass/RoomList.css"
 
 interface RoomListProps {
     rooms: Room[];
@@ -10,16 +11,20 @@ interface RoomListProps {
 const RoomList: React.FC<RoomListProps> = ({ rooms, selectedRoom, setRoom }) => {
     return (
         <div>
-            <h2 className="text-lg font-bold mb-2">部屋一覧</h2>
-            <table className="border-collapse border border-gray-400">
+            <h2>部屋一覧</h2>
+            <table>
                 <tbody>
                     {rooms.map((room) => (
-                        <tr
-                            key={room.id}
-                            className={`cursor-pointer ${selectedRoom?.id === room.id ? "bg-yellow-300" : ""}`}
-                            onClick={() => setRoom(room)}
-                        >
-                            <td className="border border-gray-400 p-2">{room.name}</td>
+                        <tr key={room.id}>
+                            <td
+                                className={`
+                                    room-row
+                                    ${selectedRoom?.id === room.id ? 'selected' : ''}
+                                `}
+                                onClick={() => setRoom(room)}
+                            >
+                                {room.name}
+                            </td>
                         </tr>
                     ))}
                 </tbody>

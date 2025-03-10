@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { floors, Room } from "./data/floors";
+import { floors, Room } from "./data/rooms.ts";
 import FloorSwitcher from "./components/FloorSwitcher.tsx";
 import Map from "./components/Map.tsx";
 import RoomDetails from "./components/RoomDetails.tsx";
@@ -8,7 +8,7 @@ import useSearch from "./hooks/useSearch.ts";
 import SearchBar from "./components/SearchBar.tsx";
 
 const App: React.FC = () => {
-    const [floorId, setFloorId] = useState<number>(1);
+    const [floorId, setFloorId] = useState<string>("S1");
     const [selectedRoom, setRoom] = useState<Room | null>(null);
     const [highlighted, setHighlighted] = useState<string[]>([]);
     const { search, setSearch, handleSearch, clearSearch, errorMessage } = useSearch(setFloorId, setRoom, setHighlighted);
@@ -26,6 +26,7 @@ const App: React.FC = () => {
             input.addEventListener("focus", () => {
                 if (window.innerWidth <= 768) {
                     input.scrollIntoView({ behavior: "smooth" });
+                    window.scrollBy(0, 20); // 20px上にスクロール
                 }
             });
         }
@@ -34,9 +35,9 @@ const App: React.FC = () => {
     if (!currentFloor) return <p>エラー: 階が見つかりません</p>;
 
     return (
-        <div className="flex flex-col items-center p-4">
+        <div>
             {/* タイトル */}
-            <h1 className="text-2xl font-bold mb-4">校内マップ</h1>
+            <h1>校内マップ</h1>
 
             {/* 検索バー */}
             <SearchBar
@@ -46,7 +47,7 @@ const App: React.FC = () => {
             />
 
             {/* エラーメッセージを表示 */}
-            {errorMessage && <p className="text-red-500">{errorMessage}</p>}
+            {errorMessage && <p>{errorMessage}</p>}
 
             {/* 階の切り替えボタン */}
             <FloorSwitcher
@@ -55,7 +56,7 @@ const App: React.FC = () => {
                 setFloorId={setFloorId}
             />
 
-            <div className="flex flex-col md:flex-row gap-8 w-full">
+            <div>
                 {/* マップ */}
                 <Map
                     currentFloor={currentFloor}
@@ -64,14 +65,14 @@ const App: React.FC = () => {
                     setRoom={handleRoomSelect}
                 />
 
-                <div className="flex flex-col gap-4 w-full max-w-md">
+                <div>
                     {/* 部屋リスト */}
                     <RoomList
-                        rooms={currentFloor.rooms}
+                        rooms={currentFloor.groups.flatMap(group => group.rooms)}
                         setRoom={handleRoomSelect}
                         selectedRoom={selectedRoom}
                     />
-                    
+
                     {/* 部屋詳細 */}
                     <RoomDetails
                         selectedRoom={selectedRoom}

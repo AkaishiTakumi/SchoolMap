@@ -1,10 +1,10 @@
 import { useState, useCallback } from "react";
-import { floors, Floor, Room } from "../data/floors";
+import { floors, Room } from "../data/rooms";
 import moji from "moji";
 import Fuse from "fuse.js";
 
 const useSearch = (
-    setFloorId: (id: number) => void,
+    setFloorId: (id: string) => void,
     setRoom: (room: Room | null) => void,
     setHighlighted: (ids: string[]) => void
 ) => {
@@ -42,38 +42,38 @@ const useSearch = (
         }
 
         // 部屋名で検索
-        const fuse = new Fuse(floors, {
-            keys: ["name", "rooms.name"],
+        const fuse = new Fuse(floors.flatMap(floor => floor.groups.flatMap(group => group.rooms)), {
+            keys: ["name"],
             threshold: 0.3, // あいまい度を設定
             distance: 100, // スペルミスをカバーするための距離設定
             includeScore: true,
             useExtendedSearch: true
         });
 
-
         // 検索結果を取得
         const result = fuse.search(query);
 
-        if (result.length > 0) {// 検索結果があったら
-            const matchedFloor = result[0].item as Floor;
-            setFloorId(matchedFloor.id);
-
-            // もし部屋が一致していたら
-            const matchedRooms = result.flatMap((res) =>
-                res.item.rooms.filter((room) =>
-                    normalizeText(room.name).includes(query)
+        if (result.length > 0) { // 検索結果があったら
+            const matchedRooms = result.map(res => res.item as Room);
+            const matchedFloor = floors.find(floor => 
+                floor.groups.some(group => 
+                    group.rooms.some(room => matchedRooms.some(matchedRoom => room.id === matchedRoom.id))
                 )
             );
-
-            if (matchedRooms.length === 1) {// 部屋が一致していたら
-                setRoom(matchedRooms[0]); // 部屋をセット
-                setHighlighted([]); // ハイライトをクリア
-            } else {// 部屋が一致していなかったら
-                setRoom(null); // 部屋をクリア
-                setHighlighted(matchedRooms.map((room) => room.id)); // 部屋をハイライト
+        
+            if (matchedFloor) {
+                setFloorId(matchedFloor.id);
+            
+                if (matchedRooms.length === 1) { // 部屋が一致していたら
+                    setRoom(matchedRooms[0]); // 部屋をセット
+                    setHighlighted([]); // ハイライトをクリア
+                } else { // 部屋が一致していなかったら
+                    setRoom(null); // 部屋をクリア
+                    setHighlighted(matchedRooms.map(room => room.id)); // 部屋をハイライト
+                }
+                setErrorMessage("");  // エラーメッセージを消す
             }
-            setErrorMessage("");  // エラーメッセージを消す
-        } else {// 検索結果がなかったら
+        } else { // 検索結果がなかったら
             setErrorMessage("検索結果が見つかりませんでした。");
         }
     }, [search, setFloorId, setRoom, setHighlighted]);
