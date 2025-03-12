@@ -6,7 +6,7 @@ export type Room = {
     width: number;
     height: number;
     fill: string;
-    sub_name:string;
+    sub_name: string;
 };
 
 export type Group = {
@@ -30,25 +30,25 @@ export const groups: Group[] = [
                 id: "SA101", name: "控室",
                 x: 220, y: 690, width: 50, height: 60,
                 fill: "lightblue",
-                sub_name:""
+                sub_name: ""
             },
             {
                 id: "SA102", name: "女性教員用WC",
                 x: 270, y: 720, width: 30, height: 30,
                 fill: "pink",
-                sub_name:""
+                sub_name: ""
             },
             {
                 id: "SA103", name: "総務課事務室",
                 x: 300, y: 670, width: 140, height: 80,
                 fill: "lightblue",
-                sub_name:""
+                sub_name: ""
             },
             {
                 id: "SA104", name: "マルチパーパスルーム（情報）",
                 x: 490, y: 670, width: 140, height: 80,
                 fill: "lightblue",
-                sub_name:""
+                sub_name: ""
             },
         ],
     },
@@ -60,37 +60,37 @@ export const groups: Group[] = [
                 id: "SB101", name: "男子WC",
                 x: 450, y: 370, width: 40, height: 30,
                 fill: "pink",
-                sub_name:""
+                sub_name: ""
             },
             {
                 id: "SB102", name: "女子WC",
                 x: 450, y: 400, width: 40, height: 10,
                 fill: "pink",
-                sub_name:""
+                sub_name: ""
             },
             {
                 id: "SB103", name: "多目的WC",
                 x: 450, y: 410, width: 20, height: 20,
                 fill: "pink",
-                sub_name:""
+                sub_name: ""
             },
             {
                 id: "SB104", name: "準備室",
                 x: 450, y: 460, width: 60, height: 30,
                 fill: "lightblue",
-                sub_name:""
+                sub_name: ""
             },
             {
                 id: "SB105", name: "マルチパーパスルーム（ものづくり）",
                 x: 450, y: 490, width: 60, height: 120,
                 fill: "lightblue",
-                sub_name:""
+                sub_name: ""
             },
             {
                 id: "SB106", name: "外来者用WC",
                 x: 450, y: 610, width: 60, height: 30,
                 fill: "pink",
-                sub_name:""
+                sub_name: ""
             },
         ]
     },
@@ -102,67 +102,67 @@ export const groups: Group[] = [
                 id: "SC101", name: "材料力学第1実験室",
                 x: 200, y: 350, width: 60, height: 80,
                 fill: "lightblue",
-                sub_name:""
+                sub_name: ""
             },
             {
                 id: "SC102", name: "塩田研究室",
                 x: 260, y: 370, width: 30, height: 60,
                 fill: "lightblue",
-                sub_name:""
+                sub_name: ""
             },
             {
                 id: "SC103", name: "機械卒研室",
                 x: 290, y: 370, width: 30, height: 60,
                 fill: "lightblue",
-                sub_name:""
+                sub_name: ""
             },
             {
                 id: "SC104", name: "教室4ーM",
                 x: 320, y: 370, width: 90, height: 60,
                 fill: "lightblue",
-                sub_name:"アプリケーション部門"
+                sub_name: "アプリケーション部門"
             },
             {
                 id: "SC105", name: "電気室",
                 x: 410, y: 370, width: 30, height: 60,
                 fill: "lightblue",
-                sub_name:""
+                sub_name: ""
             },
             {
                 id: "SC106", name: "教室3ーS",
                 x: 490, y: 370, width: 90, height: 60,
                 fill: "lightblue",
-                sub_name:"メディアコンテンツ部門"
+                sub_name: "メディアコンテンツ部門"
             },
             {
                 id: "SC107", name: "廣木研究室",
                 x: 580, y: 370, width: 30, height: 60,
                 fill: "lightblue",
-                sub_name:""
+                sub_name: ""
             },
             {
                 id: "SC108", name: "関研究室",
                 x: 610, y: 390, width: 30, height: 40,
                 fill: "lightblue",
-                sub_name:""
+                sub_name: ""
             },
             {
                 id: "SC109", name: "材料実験室",
                 x: 610, y: 350, width: 90, height: 40,
                 fill: "lightblue",
-                sub_name:""
+                sub_name: ""
             },
             {
                 id: "SC110", name: "材料力学第2実験室",
                 x: 700, y: 335, width: 30, height: 95,
                 fill: "lightblue",
-                sub_name:""
+                sub_name: ""
             },
             {
                 id: "SC111", name: "精密工作実験室",
                 x: 730, y: 390, width: 30, height: 40,
                 fill: "lightblue",
-                sub_name:""
+                sub_name: ""
             },
         ]
     },
@@ -174,31 +174,31 @@ export const groups: Group[] = [
                 id: "SD101", name: "男子WC",
                 x: 450, y: 110, width: 40, height: 30,
                 fill: "pink",
-                sub_name:""
+                sub_name: ""
             },
             {
                 id: "SD102", name: "女子WC",
                 x: 450, y: 140, width: 40, height: 30,
                 fill: "pink",
-                sub_name:""
+                sub_name: ""
             },
             {
                 id: "SD103", name: "生命工学実験室",
                 x: 450, y: 170, width: 60, height: 30,
                 fill: "lightblue",
-                sub_name:""
+                sub_name: ""
             },
             {
                 id: "SD104", name: "前澤研究室",
                 x: 450, y: 200, width: 60, height: 30,
                 fill: "lightblue",
-                sub_name:""
+                sub_name: ""
             },
             {
                 id: "SD105", name: "マルチパーパスルーム（生物）",
                 x: 450, y: 230, width: 60, height: 120,
                 fill: "lightblue",
-                sub_name:""
+                sub_name: ""
             },
         ]
     },
@@ -210,79 +210,79 @@ export const groups: Group[] = [
                 id: "SE101", name: "流体第1実験室",
                 x: 110, y: 60, width: 120, height: 50,
                 fill: "lightblue",
-                sub_name:""
+                sub_name: ""
             },
             {
                 id: "SE102", name: "流体準備室",
                 x: 200, y: 110, width: 30, height: 30,
                 fill: "lightblue",
-                sub_name:""
+                sub_name: ""
             },
             {
                 id: "SE103", name: "加藤研究室",
                 x: 230, y: 80, width: 30, height: 60,
                 fill: "lightblue",
-                sub_name:""
+                sub_name: ""
             },
             {
                 id: "SE104", name: "山田（貴）研究室",
                 x: 260, y: 80, width: 30, height: 60,
                 fill: "lightblue",
-                sub_name:""
+                sub_name: ""
             },
             {
                 id: "SE105", name: "高木研究室",
                 x: 290, y: 80, width: 30, height: 60,
                 fill: "lightblue",
-                sub_name:""
+                sub_name: ""
             },
             {
                 id: "SE106", name: "小西研究室",
                 x: 320, y: 80, width: 30, height: 60,
                 fill: "lightblue",
-                sub_name:""
+                sub_name: ""
             },
             {
                 id: "SE107", name: "構造生物学実験室",
                 x: 350, y: 80, width: 30, height: 60,
                 fill: "lightblue",
-                sub_name:""
+                sub_name: ""
             },
             {
                 id: "SE108", name: "柴田研究室",
                 x: 380, y: 80, width: 30, height: 60,
                 fill: "lightblue",
-                sub_name:""
+                sub_name: ""
             },
             {
                 id: "SE109", name: "西川研究室",
                 x: 410, y: 80, width: 30, height: 60,
                 fill: "lightblue",
-                sub_name:""
+                sub_name: ""
             },
             {
                 id: "SE110", name: "教室4ーS",
                 x: 490, y: 80, width: 90, height: 60,
                 fill: "lightblue",
-                sub_name:""
+                sub_name: ""
             },
             {
                 id: "SE111", name: "分子分光学実験室",
                 x: 580, y: 80, width: 30, height: 60,
                 fill: "lightblue",
-                sub_name:""
+                sub_name: ""
             },
             {
                 id: "SE112", name: "分子生物学実験室",
                 x: 610, y: 80, width: 30, height: 60,
                 fill: "lightblue",
-                sub_name:""
+                sub_name: ""
             },
             {
                 id: "SE113", name: "電気機械実験室",
                 x: 640, y: 60, width: 120, height: 80,
                 fill: "lightblue",
-                sub_name:""
+                sub_name: ""
             },
         ]
     },
@@ -881,52 +881,52 @@ export const blocks: Block[] = [
         ],
     },
 
-/*
-    {
-        id: "SA",
-        name: "南館A棟",
-        groups: [
-            groups.find((group) => group.id === "SA1")!,
-            groups.find((group) => group.id === "SA2")!,
-            groups.find((group) => group.id === "SA3")!,
-        ],
-    },
-    {
-        id: "SB",
-        name: "南館B棟",
-        groups: [
-            groups.find((group) => group.id === "SB1")!,
-            groups.find((group) => group.id === "SB2")!,
-            groups.find((group) => group.id === "SB3")!,
-        ],
-    },
-    {
-        id: "SC",
-        name: "南館C棟",
-        groups: [
-            groups.find((group) => group.id === "SC1")!,
-            groups.find((group) => group.id === "SC2")!,
-            groups.find((group) => group.id === "SC3")!,
-        ],
-    },
-    {
-        id: "SD",
-        name: "南館D棟",
-        groups: [
-            groups.find((group) => group.id === "SD1")!,
-            groups.find((group) => group.id === "SD2")!,
-            groups.find((group) => group.id === "SD3")!,
-        ],
-    },
-    {
-        id: "SE",
-        name: "南館E棟",
-        groups: [
-            groups.find((group) => group.id === "SE1")!,
-            groups.find((group) => group.id === "SE2")!,
-            groups.find((group) => group.id === "SE3")!,
-        ],
-    },
-    */
+    /*
+        {
+            id: "SA",
+            name: "南館A棟",
+            groups: [
+                groups.find((group) => group.id === "SA1")!,
+                groups.find((group) => group.id === "SA2")!,
+                groups.find((group) => group.id === "SA3")!,
+            ],
+        },
+        {
+            id: "SB",
+            name: "南館B棟",
+            groups: [
+                groups.find((group) => group.id === "SB1")!,
+                groups.find((group) => group.id === "SB2")!,
+                groups.find((group) => group.id === "SB3")!,
+            ],
+        },
+        {
+            id: "SC",
+            name: "南館C棟",
+            groups: [
+                groups.find((group) => group.id === "SC1")!,
+                groups.find((group) => group.id === "SC2")!,
+                groups.find((group) => group.id === "SC3")!,
+            ],
+        },
+        {
+            id: "SD",
+            name: "南館D棟",
+            groups: [
+                groups.find((group) => group.id === "SD1")!,
+                groups.find((group) => group.id === "SD2")!,
+                groups.find((group) => group.id === "SD3")!,
+            ],
+        },
+        {
+            id: "SE",
+            name: "南館E棟",
+            groups: [
+                groups.find((group) => group.id === "SE1")!,
+                groups.find((group) => group.id === "SE2")!,
+                groups.find((group) => group.id === "SE3")!,
+            ],
+        },
+        */
     /**まだ書ききれていないフロアや部屋がある */
 ];

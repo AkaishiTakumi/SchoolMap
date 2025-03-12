@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { blocks, Room } from "./data/structures.ts";
 import BlockSwitcher from "./components/BlockSwitcher.tsx";
+import NameSwitch from "./components/NameSwitch";
 import Map from "./components/Map.tsx";
-import RoomDetails from "./components/RoomDetails.tsx";
+//import RoomDetails from "./components/RoomDetails.tsx";
 import RoomList from "./components/RoomList.tsx";
 import useSearch from "./hooks/useSearch.ts";
 import SearchBar from "./components/SearchBar.tsx";
@@ -11,6 +12,7 @@ const App: React.FC = () => {
     const [blockId, setBlockId] = useState<string>("S1");
     const [selectedRoom, setRoom] = useState<Room | null>(null);
     const [highlighted, setHighlighted] = useState<string[]>([]);
+    const [showSubName, setShowSubName] = useState(false); // 追加
     const { search, setSearch, handleSearch, clearSearch, errorMessage } = useSearch(setBlockId, setRoom, setHighlighted);
 
     const currentBlock = blocks.find((block) => block.id === blockId);
@@ -61,9 +63,16 @@ const App: React.FC = () => {
                 <Map
                     currentBlock={currentBlock}
                     selectedRoom={selectedRoom}
+                    showSubName={showSubName}
                     highlighted={highlighted}
                     setRoom={handleRoomSelect}
-                    setBlockId={setBlockId} // 追加
+                    setBlockId={setBlockId}
+                />
+
+                {/* イベント部屋スイッチ */}
+                <NameSwitch
+                    showSubName={showSubName}
+                    setShowSubName={setShowSubName}
                 />
 
                 <div>
@@ -71,6 +80,7 @@ const App: React.FC = () => {
                     <RoomList
                         rooms={currentBlock.groups.flatMap(group => group.rooms)}
                         setRoom={handleRoomSelect}
+                        showSubName={showSubName}
                         selectedRoom={selectedRoom}
                     />
 
