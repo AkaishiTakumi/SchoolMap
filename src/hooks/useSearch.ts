@@ -1,10 +1,17 @@
 import { useState, useCallback } from "react";
-import { floors, Room } from "../data/rooms";
+import { blocks, Room } from "../data/structures";
 import moji from "moji";
 import Fuse from "fuse.js";
 
+/**
+ * 検索機能を提供するカスタムフック
+ * @param setBlockId 階をセットする関数
+ * @param setRoom 部屋をセットする関数
+ * @param setHighlighted ハイライトする部屋のidをセットする関数
+ * @returns \{search, setSearch, handleSearch, clearSearch, errorMessage}
+ */
 const useSearch = (
-    setFloorId: (id: string) => void,
+    setBlockId: (id: string) => void,
     setRoom: (room: Room | null) => void,
     setHighlighted: (ids: string[]) => void
 ) => {
@@ -27,22 +34,22 @@ const useSearch = (
         // 検索ワードの前後のスペースを削除して、小文字に変換
         const query = search.replace(/\s+/g, "").toLowerCase();
 
-        // searchと一致する../data/floors.tsのfloor.nameがあるかどうか
-        // あればそのfloor.idをsetFloorIdにセット
-        const floorMatch = floors.find((floor) =>
-            normalizeText(floor.name).includes(search)
+        // searchと一致する../data/blocks.tsのblock.nameがあるかどうか
+        // あればそのblock.idをsetBlockIdにセット
+        const blockMatch = blocks.find((block) =>
+            normalizeText(block.name).includes(search)
         );
 
         // 部屋名で検索
-        if (floorMatch) {
-            setFloorId(floorMatch.id);
+        if (blockMatch) {
+            setBlockId(blockMatch.id);
             setRoom(null);
             setHighlighted([]);
             return;
         }
 
         // 部屋名で検索
-        const fuse = new Fuse(floors.flatMap(floor => floor.groups.flatMap(group => group.rooms)), {
+        const fuse = new Fuse(blocks.flatMap(block => block.groups.flatMap(group => group.rooms)), {
             keys: ["name"],
             threshold: 0.3, // あいまい度を設定
             distance: 100, // スペルミスをカバーするための距離設定
@@ -55,14 +62,14 @@ const useSearch = (
 
         if (result.length > 0) { // 検索結果があったら
             const matchedRooms = result.map(res => res.item as Room);
-            const matchedFloor = floors.find(floor => 
-                floor.groups.some(group => 
+            const matchedBlock = blocks.find(block => 
+                block.groups.some(group => 
                     group.rooms.some(room => matchedRooms.some(matchedRoom => room.id === matchedRoom.id))
                 )
             );
         
-            if (matchedFloor) {
-                setFloorId(matchedFloor.id);
+            if (matchedBlock) {
+                setBlockId(matchedBlock.id);
             
                 if (matchedRooms.length === 1) { // 部屋が一致していたら
                     setRoom(matchedRooms[0]); // 部屋をセット
@@ -76,7 +83,7 @@ const useSearch = (
         } else { // 検索結果がなかったら
             setErrorMessage("検索結果が見つかりませんでした。");
         }
-    }, [search, setFloorId, setRoom, setHighlighted]);
+    }, [search, setBlockId, setRoom, setHighlighted]);
 
     const clearSearch = () => {
         setSearch("");

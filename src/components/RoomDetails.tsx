@@ -1,5 +1,5 @@
 import React from "react";
-import { Room } from "../data/rooms";
+import { Room } from "../data/structures";
 
 interface RoomDetailsProps {
     selectedRoom: Room | null;

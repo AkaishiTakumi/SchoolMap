@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { floors, Room } from "./data/rooms.ts";
-import FloorSwitcher from "./components/FloorSwitcher.tsx";
+import { blocks, Room } from "./data/structures.ts";
+import BlockSwitcher from "./components/BlockSwitcher.tsx";
 import Map from "./components/Map.tsx";
 import RoomDetails from "./components/RoomDetails.tsx";
 import RoomList from "./components/RoomList.tsx";
@@ -8,12 +8,12 @@ import useSearch from "./hooks/useSearch.ts";
 import SearchBar from "./components/SearchBar.tsx";
 
 const App: React.FC = () => {
-    const [floorId, setFloorId] = useState<string>("S1");
+    const [blockId, setBlockId] = useState<string>("S1");
     const [selectedRoom, setRoom] = useState<Room | null>(null);
     const [highlighted, setHighlighted] = useState<string[]>([]);
-    const { search, setSearch, handleSearch, clearSearch, errorMessage } = useSearch(setFloorId, setRoom, setHighlighted);
+    const { search, setSearch, handleSearch, clearSearch, errorMessage } = useSearch(setBlockId, setRoom, setHighlighted);
 
-    const currentFloor = floors.find((floor) => floor.id === floorId);
+    const currentBlock = blocks.find((block) => block.id === blockId);
 
     const handleRoomSelect = (room: Room) => {
         setRoom(room);
@@ -32,7 +32,7 @@ const App: React.FC = () => {
         }
     }, []);
 
-    if (!currentFloor) return <p>エラー: 階が見つかりません</p>;
+    if (!currentBlock) return <p>エラー: 階が見つかりません</p>;
 
     return (
         <div>
@@ -50,25 +50,26 @@ const App: React.FC = () => {
             {errorMessage && <p>{errorMessage}</p>}
 
             {/* 階の切り替えボタン */}
-            <FloorSwitcher
-                floors={floors}
-                currentFloorId={floorId}
-                setFloorId={setFloorId}
+            <BlockSwitcher
+                blocks={blocks}
+                currentBlockId={blockId}
+                setBlockId={setBlockId}
             />
 
             <div>
                 {/* マップ */}
                 <Map
-                    currentFloor={currentFloor}
+                    currentBlock={currentBlock}
                     selectedRoom={selectedRoom}
                     highlighted={highlighted}
                     setRoom={handleRoomSelect}
+                    setBlockId={setBlockId} // 追加
                 />
 
                 <div>
                     {/* 部屋リスト */}
                     <RoomList
-                        rooms={currentFloor.groups.flatMap(group => group.rooms)}
+                        rooms={currentBlock.groups.flatMap(group => group.rooms)}
                         setRoom={handleRoomSelect}
                         selectedRoom={selectedRoom}
                     />
