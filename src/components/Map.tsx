@@ -71,12 +71,12 @@ const Map: React.FC<MapProps> = ({ currentBlock, selectedRoom, highlighted, setR
                         />
                     }
                     <g transform={transform}>
-                        <rect x={x + width * 0.6} y={y} width={width * 0.2} height={height * 0.5} fill={rectColor} stroke="#333" strokeWidth="1" opacity="0.5" />
-                        <rect x={x + width * 0.8} y={y} width={width * 0.2} height={height} fill={rectColor} stroke="#333" strokeWidth="1" opacity="0.5" />
-                        <rect x={x} y={y + height * 0.5} width={width * 0.2} height={height * 0.5} fill={rectColor} stroke="#333" strokeWidth="1" opacity="0.5" />
-                        <rect x={x + width * 0.2} y={y + height * 0.5} width={width * 0.2} height={height * 0.5} fill={rectColor} stroke="#333" strokeWidth="1" opacity="0.5" />
-                        <rect x={x + width * 0.4} y={y + height * 0.5} width={width * 0.2} height={height * 0.5} fill={rectColor} stroke="#333" strokeWidth="1" opacity="0.5" />
-                        <rect x={x + width * 0.6} y={y + height * 0.5} width={width * 0.2} height={height * 0.5} fill={rectColor} stroke="#333" strokeWidth="1" opacity="0.5" />
+                        <rect x={x + width * 0.6} y={y} width={width * 0.2} height={height * 0.5} fill={rectColor} stroke="#333" strokeWidth="1" /*opacity="0.5" *//>
+                        <rect x={x + width * 0.8} y={y} width={width * 0.2} height={height} fill={rectColor} stroke="#333" strokeWidth="1" /*opacity="0.5" *//>
+                        <rect x={x} y={y + height * 0.5} width={width * 0.2} height={height * 0.5} fill={rectColor} stroke="#333" strokeWidth="1" /*opacity="0.5" *//>
+                        <rect x={x + width * 0.2} y={y + height * 0.5} width={width * 0.2} height={height * 0.5} fill={rectColor} stroke="#333" strokeWidth="1" /*opacity="0.5" *//>
+                        <rect x={x + width * 0.4} y={y + height * 0.5} width={width * 0.2} height={height * 0.5} fill={rectColor} stroke="#333" strokeWidth="1" /*opacity="0.5" *//>
+                        <rect x={x + width * 0.6} y={y + height * 0.5} width={width * 0.2} height={height * 0.5} fill={rectColor} stroke="#333" strokeWidth="1" /*opacity="0.5" *//>
                         <path
                             d={`
                                 m${x} ${y + height * 0.75}
@@ -119,8 +119,8 @@ const Map: React.FC<MapProps> = ({ currentBlock, selectedRoom, highlighted, setR
                     onClick={() => handleStairsClick(targetBlockId, highlightStairsId)}
                 >
                     <g transform={transform}>
-                        <rect x={x} y={y + height * 0.5} width={width * 0.2} height={height * 0.5} fill={rectColor} stroke="#333" strokeWidth="1" opacity="0.5" />
-                        <rect x={x + width * 0.2} y={y + height * 0.5} width={width * 0.2} height={height * 0.5} fill={rectColor} stroke="#333" strokeWidth="1" opacity="0.5" />
+                        <rect x={x} y={y + height * 0.5} width={width * 0.2} height={height * 0.5} fill={rectColor} stroke="#333" strokeWidth="1" /*opacity="0.5" *//>
+                        <rect x={x + width * 0.2} y={y + height * 0.5} width={width * 0.2} height={height * 0.5} fill={rectColor} stroke="#333" strokeWidth="1" /*opacity="0.5" *//>
                         <path
                             d={`
                                 m${x} ${y + height * 0.75}
@@ -169,8 +169,8 @@ const Map: React.FC<MapProps> = ({ currentBlock, selectedRoom, highlighted, setR
                     onClick={() => handleStairsClick(targetBlockId, highlightStairsId)}
                 >
                     <g transform={transform}>
-                        <rect x={x} y={y} width={width * 0.2} height={height * 0.5} fill={rectColor} stroke="#333" strokeWidth="1" opacity="0.5" />
-                        <rect x={x + width * 0.2} y={y} width={width * 0.2} height={height * 0.5} fill={rectColor} stroke="#333" strokeWidth="1" opacity="0.5" />
+                        <rect x={x} y={y} width={width * 0.2} height={height * 0.5} fill={rectColor} stroke="#333" strokeWidth="1" /*opacity="0.5" *//>
+                        <rect x={x + width * 0.2} y={y} width={width * 0.2} height={height * 0.5} fill={rectColor} stroke="#333" strokeWidth="1" /*opacity="0.5" *//>
                         <path
                             d={`
                                 m${x + width * 0.4} ${y + height * 0.25}
@@ -232,12 +232,12 @@ const Map: React.FC<MapProps> = ({ currentBlock, selectedRoom, highlighted, setR
                         : ""
                     }
                     <g transform={transform}>
-                        <rect x={x} y={y} width={width * 0.2} height={height * 0.5} fill={rectColor} stroke="#333" strokeWidth="1" opacity="0.5" />
-                        <rect x={x + width * 0.2} y={y} width={width * 0.2} height={height * 0.5} fill={rectColor} stroke="#333" strokeWidth="1" opacity="0.5" />
-                        <rect x={x + width * 0.4} y={y} width={width * 0.2} height={height * 0.5} fill={rectColor} stroke="#333" strokeWidth="1" opacity="0.5" />
-                        <rect x={x + width * 0.6} y={y} width={width * 0.2} height={height * 0.5} fill={rectColor} stroke="#333" strokeWidth="1" opacity="0.5" />
-                        <rect x={x + width * 0.8} y={y} width={width * 0.2} height={height} fill={rectColor} stroke="#333" strokeWidth="1" opacity="0.5" />
-                        <rect x={x + width * 0.6} y={y + height * 0.5} width={width * 0.2} height={height * 0.5} fill={rectColor} stroke="#333" strokeWidth="1" opacity="0.5" />
+                        <rect x={x} y={y} width={width * 0.2} height={height * 0.5} fill={rectColor} stroke="#333" strokeWidth="1" /*opacity="0.5" *//>
+                        <rect x={x + width * 0.2} y={y} width={width * 0.2} height={height * 0.5} fill={rectColor} stroke="#333" strokeWidth="1" /*opacity="0.5" *//>
+                        <rect x={x + width * 0.4} y={y} width={width * 0.2} height={height * 0.5} fill={rectColor} stroke="#333" strokeWidth="1" /*opacity="0.5" *//>
+                        <rect x={x + width * 0.6} y={y} width={width * 0.2} height={height * 0.5} fill={rectColor} stroke="#333" strokeWidth="1" /*opacity="0.5" *//>
+                        <rect x={x + width * 0.8} y={y} width={width * 0.2} height={height} fill={rectColor} stroke="#333" strokeWidth="1" /*opacity="0.5" *//>
+                        <rect x={x + width * 0.6} y={y + height * 0.5} width={width * 0.2} height={height * 0.5} fill={rectColor} stroke="#333" strokeWidth="1" /*opacity="0.5" *//>
                         <path
                             d={`
                                 m${x + width * 0.6} ${y + height * 0.75}
@@ -290,9 +290,9 @@ const Map: React.FC<MapProps> = ({ currentBlock, selectedRoom, highlighted, setR
                         opacity="0.5"
                     />
                     <g transform={transform}>
-                        <rect x={x + width * 0.6} y={y} width={width * 0.2} height={height * 0.5} fill={rectColor} stroke="#333" strokeWidth="1" opacity="0.5" />
-                        <rect x={x + width * 0.8} y={y} width={width * 0.2} height={height} fill={rectColor} stroke="#333" strokeWidth="1" opacity="0.5" />
-                        <rect x={x + width * 0.6} y={y + height * 0.5} width={width * 0.2} height={height * 0.5} fill={rectColor} stroke="#333" strokeWidth="1" opacity="0.5" />
+                        <rect x={x + width * 0.6} y={y} width={width * 0.2} height={height * 0.5} fill={rectColor} stroke="#333" strokeWidth="1" /*opacity="0.5" *//>
+                        <rect x={x + width * 0.8} y={y} width={width * 0.2} height={height} fill={rectColor} stroke="#333" strokeWidth="1" /*opacity="0.5" *//>
+                        <rect x={x + width * 0.6} y={y + height * 0.5} width={width * 0.2} height={height * 0.5} fill={rectColor} stroke="#333" strokeWidth="1" /*opacity="0.5" *//>
                         <path
                             d={`
                                 m${x + width * 0.6} ${y + height * 0.75}
@@ -340,50 +340,50 @@ const Map: React.FC<MapProps> = ({ currentBlock, selectedRoom, highlighted, setR
         if (currentBlockId === "S1") {
             return (
                 <>
-                    <rect x="230" y="60" width="410" height="20" fill="#ccc" stroke="#0f0" strokeWidth="3" opacity="0.5" />
-                    <rect x="440" y="60" width="10" height="690" fill="#ccc" stroke="#0f0" strokeWidth="3" opacity="0.5" />
-                    <rect x="260" y="350" width="350" height="20" fill="#ccc" stroke="#0f0" strokeWidth="3" opacity="0.5" />
-                    <rect x="440" y="80" width="50" height="30" fill="#ccc" stroke="#0f0" strokeWidth="3" opacity="0.5" />
-                    <rect x="440" y="430" width="50" height="30" fill="#ccc" stroke="#0f0" strokeWidth="3" opacity="0.5" />
-                    <rect x="440" y="640" width="50" height="110" fill="#ccc" stroke="#0f0" strokeWidth="3" opacity="0.5" />
-                    <rect x="270" y="670" width="30" height="50" fill="#ccc" stroke="#0f0" strokeWidth="3" opacity="0.5" />
+                    <rect x="230" y="60" width="410" height="20" fill="#ccc" /*stroke="#0f0"*/ strokeWidth="3" /*opacity="0.5" *//>
+                    <rect x="440" y="60" width="10" height="690" fill="#ccc" /*stroke="#0f0"*/ strokeWidth="3" /*opacity="0.5" *//>
+                    <rect x="260" y="350" width="350" height="20" fill="#ccc" /*stroke="#0f0"*/ strokeWidth="3" /*opacity="0.5" *//>
+                    <rect x="440" y="80" width="50" height="30" fill="#ccc" /*stroke="#0f0"*/ strokeWidth="3" /*opacity="0.5" *//>
+                    <rect x="440" y="430" width="50" height="30" fill="#ccc" /*stroke="#0f0"*/ strokeWidth="3" /*opacity="0.5" *//>
+                    <rect x="440" y="640" width="50" height="110" fill="#ccc" /*stroke="#0f0"*/ strokeWidth="3" /*opacity="0.5" *//>
+                    <rect x="270" y="670" width="30" height="50" fill="#ccc" /*stroke="#0f0"*/ strokeWidth="3" /*opacity="0.5" *//>
 
-                    <rect x="695" y="330" width="25" height="5" fill="blue" />
+                    {/*<rect x="695" y="330" width="25" height="5" fill="blue" />
                     <rect x="695" y="330" width="5" height="25" fill="blue" />
                     <rect x="740" y="330" width="25" height="5" fill="blue" />
-                    <rect x="760" y="330" width="5" height="25" fill="blue" />
+                    <rect x="760" y="330" width="5" height="25" fill="blue" />*/}
                 </>
             )
         }
         else if (currentBlockId === "S2") {
             return (
                 <>
-                    <rect x="230" y="60" width="470" height="20" fill="#ccc" stroke="#0f0" strokeWidth="3" opacity="0.5" />
-                    <rect x="440" y="60" width="10" height="630" fill="#ccc" stroke="#0f0" strokeWidth="3" opacity="0.5" />
-                    <rect x="200" y="350" width="460" height="20" fill="#ccc" stroke="#0f0" strokeWidth="3" opacity="0.5" />
-                    <rect x="440" y="80" width="50" height="30" fill="#ccc" stroke="#0f0" strokeWidth="3" opacity="0.5" />
-                    <rect x="440" y="430" width="50" height="30" fill="#ccc" stroke="#0f0" strokeWidth="3" opacity="0.5" />
-                    <rect x="360" y="670" width="180" height="20" fill="#ccc" stroke="#0f0" strokeWidth="3" opacity="0.5" />
-                    <rect x="440" y="640" width="50" height="30" fill="#ccc" stroke="#0f0" strokeWidth="3" opacity="0.5" />
-                    <rect x="270" y="690" width="120" height="20" fill="#ccc" stroke="#0f0" strokeWidth="3" opacity="0.5" />
-                    <rect x="280" y="690" width="20" height="60" fill="#ccc" stroke="#0f0" strokeWidth="3" opacity="0.5" />
+                    <rect x="230" y="60" width="470" height="20" fill="#ccc" /*stroke="#0f0"*/ strokeWidth="3" /*opacity="0.5" *//>
+                    <rect x="440" y="60" width="10" height="630" fill="#ccc" /*stroke="#0f0"*/ strokeWidth="3" /*opacity="0.5" *//>
+                    <rect x="200" y="350" width="460" height="20" fill="#ccc" /*stroke="#0f0"*/ strokeWidth="3" /*opacity="0.5" *//>
+                    <rect x="440" y="80" width="50" height="30" fill="#ccc" /*stroke="#0f0"*/ strokeWidth="3" /*opacity="0.5" *//>
+                    <rect x="440" y="430" width="50" height="30" fill="#ccc" /*stroke="#0f0"*/ strokeWidth="3" /*opacity="0.5" *//>
+                    <rect x="360" y="670" width="180" height="20" fill="#ccc" /*stroke="#0f0"*/ strokeWidth="3" /*opacity="0.5" *//>
+                    <rect x="440" y="640" width="50" height="30" fill="#ccc" /*stroke="#0f0"*/ strokeWidth="3" /*opacity="0.5" *//>
+                    <rect x="270" y="690" width="120" height="20" fill="#ccc" /*stroke="#0f0"*/ strokeWidth="3" /*opacity="0.5" *//>
+                    <rect x="280" y="690" width="20" height="60" fill="#ccc" /*stroke="#0f0"*/ strokeWidth="3" /*opacity="0.5" *//>
                 </>
             )
         }
         else if (currentBlockId === "S3") {
             return (
                 <>
-                    <rect x="110" y="60" width="560" height="20" fill="#ccc" stroke="#0f0" strokeWidth="3" opacity="0.5" />
-                    <rect x="440" y="60" width="10" height="630" fill="#ccc" stroke="#0f0" strokeWidth="3" opacity="0.5" />
-                    <rect x="200" y="350" width="470" height="20" fill="#ccc" stroke="#0f0" strokeWidth="3" opacity="0.5" />
-                    <rect x="440" y="80" width="50" height="30" fill="#ccc" stroke="#0f0" strokeWidth="3" opacity="0.5" />
-                    <rect x="440" y="430" width="50" height="30" fill="#ccc" stroke="#0f0" strokeWidth="3" opacity="0.5" />
-                    <rect x="360" y="670" width="150" height="20" fill="#ccc" stroke="#0f0" strokeWidth="3" opacity="0.5" />
-                    <rect x="440" y="640" width="50" height="30" fill="#ccc" stroke="#0f0" strokeWidth="3" opacity="0.5" />
-                    <rect x="250" y="690" width="140" height="20" fill="#ccc" stroke="#0f0" strokeWidth="3" opacity="0.5" />
-                    <rect x="280" y="690" width="20" height="60" fill="#ccc" stroke="#0f0" strokeWidth="3" opacity="0.5" />
-                    <rect x="450" y="140" width="40" height="210" fill="#ccc" stroke="#0f0" strokeWidth="3" opacity="0.5" />
-                    <rect x="450" y="170" width="60" height="180" fill="#ccc" stroke="#0f0" strokeWidth="3" opacity="0.5" />
+                    <rect x="110" y="60" width="560" height="20" fill="#ccc" /*stroke="#0f0"*/ strokeWidth="3" /*opacity="0.5" *//>
+                    <rect x="440" y="60" width="10" height="630" fill="#ccc" /*stroke="#0f0"*/ strokeWidth="3" /*opacity="0.5" *//>
+                    <rect x="200" y="350" width="470" height="20" fill="#ccc" /*stroke="#0f0"*/ strokeWidth="3" /*opacity="0.5" *//>
+                    <rect x="440" y="80" width="50" height="30" fill="#ccc" /*stroke="#0f0"*/ strokeWidth="3" /*opacity="0.5" *//>
+                    <rect x="440" y="430" width="50" height="30" fill="#ccc" /*stroke="#0f0"*/ strokeWidth="3" /*opacity="0.5" *//>
+                    <rect x="360" y="670" width="150" height="20" fill="#ccc" /*stroke="#0f0"*/ strokeWidth="3" /*opacity="0.5" *//>
+                    <rect x="440" y="640" width="50" height="30" fill="#ccc" /*stroke="#0f0"*/ strokeWidth="3" /*opacity="0.5" *//>
+                    <rect x="250" y="690" width="140" height="20" fill="#ccc" /*stroke="#0f0"*/ strokeWidth="3" /*opacity="0.5" *//>
+                    <rect x="280" y="690" width="20" height="60" fill="#ccc" /*stroke="#0f0"*/ strokeWidth="3" /*opacity="0.5" *//>
+                    <rect x="450" y="140" width="40" height="210" fill="#ccc" /*stroke="#0f0"*/ strokeWidth="3" /*opacity="0.5" *//>
+                    <rect x="450" y="170" width="60" height="180" fill="#ccc" /*stroke="#0f0"*/ strokeWidth="3" /*opacity="0.5" *//>
                 </>
             )
         }
@@ -419,13 +419,13 @@ const Map: React.FC<MapProps> = ({ currentBlock, selectedRoom, highlighted, setR
             return (
                 <>
                     {baseStairs(2, 450, 640, 40, 30, true, 0, "S2", "e")}
-                    <rect x="450" y="640" width="40" height="30" fill="none" stroke="#333" strokeWidth="1" opacity="0.5" />
+                    <rect x="450" y="640" width="40" height="30" fill="none" stroke="#333" strokeWidth="1" /*opacity="0.5" *//>
                     {baseStairs(3, 450, 430, 40, 30, false, 0, "S2", "f")}
-                    <rect x="450" y="430" width="40" height="30" fill="none" stroke="#333" strokeWidth="1" opacity="0.5" />
+                    <rect x="450" y="430" width="40" height="30" fill="none" stroke="#333" strokeWidth="1" /*opacity="0.5" *//>
                     {baseStairs(4, 450, 80, 40, 30, false, 0, "S2", "g")}
-                    <path d="m474 95 l-24 0 l0 15 l24 0" fill="none" stroke="#333" strokeWidth="1" opacity="0.5" />
+                    <path d="m474 95 l-24 0 l0 15 l24 0" fill="none" stroke="#333" strokeWidth="1" /*opacity="0.5" *//>
                     {baseStairs(3, 280, 710, 20, 40, true, 1, "S2", "h")}
-                    <rect x="280" y="710" width="20" height="40" fill="none" stroke="#333" strokeWidth="1" opacity="0.5" />
+                    <rect x="280" y="710" width="20" height="40" fill="none" stroke="#333" strokeWidth="1" /*opacity="0.5" *//>
                 </>
             )
         }
@@ -442,7 +442,7 @@ const Map: React.FC<MapProps> = ({ currentBlock, selectedRoom, highlighted, setR
                 <rect width="4096" height="4096" fill="#f4f4f4" />
 
                 {/* 廊下 */}
-                <rect x="100" y="50" width="30" height="10" fill="#f00" />
+                {/*<rect x="100" y="50" width="30" height="10" fill="#f00" />
                 <rect x="100" y="50" width="10" height="30" fill="#f00" />
                 <rect x="100" y="140" width="30" height="10" fill="#f44" />
                 <rect x="100" y="120" width="10" height="30" fill="#f44" />
@@ -472,7 +472,7 @@ const Map: React.FC<MapProps> = ({ currentBlock, selectedRoom, highlighted, setR
                 <rect x="610" y="660" width="30" height="10" fill="red" />
                 <rect x="630" y="660" width="10" height="30" fill="red" />
                 <rect x="610" y="750" width="30" height="10" fill="red" />
-                <rect x="630" y="730" width="10" height="30" fill="red" />
+                <rect x="630" y="730" width="10" height="30" fill="red" />*/}
                 {drawCorridor(currentBlock.id)}
 
                 {/* 部屋と部屋名 */}

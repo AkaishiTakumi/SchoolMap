@@ -75,9 +75,9 @@ const App: React.FC = () => {
                     />
 
                     {/* 部屋詳細 */}
-                    <RoomDetails
+                    {/*<RoomDetails
                         selectedRoom={selectedRoom}
-                    />
+                    />*/}
                 </div>
             </div>
         </div>
