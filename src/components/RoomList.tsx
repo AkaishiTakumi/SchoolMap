@@ -16,7 +16,7 @@ const RoomList: React.FC<RoomListProps> = ({ rooms, selectedRoom, showSubName, s
             <table>
                 <tbody>
                     {rooms.map((room) => {
-                        if (showSubName && room.sub_name != "")
+                        if (!showSubName || room.sub_name != "")
                             return (
                                 <tr key={room.id}>
                                     <td

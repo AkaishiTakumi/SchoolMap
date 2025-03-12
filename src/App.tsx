@@ -12,7 +12,7 @@ const App: React.FC = () => {
     const [blockId, setBlockId] = useState<string>("S1");
     const [selectedRoom, setRoom] = useState<Room | null>(null);
     const [highlighted, setHighlighted] = useState<string[]>([]);
-    const [showSubName, setShowSubName] = useState(false); // 追加
+    const [showSubName, setShowSubName] = useState(true); // 追加
     const { search, setSearch, handleSearch, clearSearch, errorMessage } = useSearch(setBlockId, setRoom, setHighlighted);
 
     const currentBlock = blocks.find((block) => block.id === blockId);
