@@ -10,23 +10,22 @@ interface BlockSwitcherProps {
 const BlockSwitcher: React.FC<BlockSwitcherProps> = ({ currentBlockId, blocks, setBlockId }) => {
     return (
         <div>
-            {blocks.map((block) => (
+            {blocks.map((block) => {
+                console.log("currentBlockId: " + currentBlockId);
+                console.log("block.id: " + block.id);
+                console.log("currentBlockId === block.id: " + (currentBlockId === block.id));
+                return(
                 <button
-                    className={`
-                        px-6
-                        py-3
-                        border
-                        rounded
-                        text-lg
-                        md:text-base
-                        ${currentBlockId === block.id ? "bg-blue-500 text-white" : "bg-gray-200"}
-                    `}
                     key={block.id}
+                    style={{
+                        border: "2px solid",
+                        borderColor: currentBlockId === block.id ? "white" : "transparent",
+                    }}
                     onClick={() => setBlockId(block.id)}
                 >
                     {block.name}
                 </button>
-            ))}
+            )})}
         </div>
     );
 };

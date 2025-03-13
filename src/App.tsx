@@ -53,8 +53,8 @@ const App: React.FC = () => {
 
             {/* 階の切り替えボタン */}
             <BlockSwitcher
-                blocks={blocks}
                 currentBlockId={blockId}
+                blocks={blocks}
                 setBlockId={setBlockId}
             />
 
