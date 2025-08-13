@@ -9,89 +9,92 @@ import useSearch from "./hooks/useSearch.ts";
 import SearchBar from "./components/SearchBar.tsx";
 
 const App: React.FC = () => {
-    const [blockId, setBlockId] = useState<string>("S1");
-    const [selectedRoom, setRoom] = useState<Room | null>(null);
-    const [highlighted, setHighlighted] = useState<string[]>([]);
-    const [showSubName, setShowSubName] = useState(true); // 追加
-    const { search, setSearch, handleSearch, clearSearch, errorMessage } = useSearch(setBlockId, setRoom, setHighlighted);
+	const [blockId, setBlockId] = useState<string>("S1");
+	const [selectedRoom, setRoom] = useState<Room | null>(null);
+	const [highlighted, setHighlighted] = useState<string[]>([]);
+	const [showSubName, setShowSubName] = useState(true); // 追加
+	const { search, setSearch, handleSearch, clearSearch, errorMessage } =
+		useSearch(setBlockId, setRoom, setHighlighted);
 
-    const currentBlock = blocks.find((block) => block.id === blockId);
+	const currentBlock = blocks.find((block) => block.id === blockId);
 
-    const handleRoomSelect = (room: Room) => {
-        setRoom(room);
-        clearSearch();
-    };
+	const handleRoomSelect = (room: Room) => {
+		setRoom(room);
+		clearSearch();
+	};
 
-    useEffect(() => {
-        const input = document.querySelector("input[type='text']");
-        if (input) {
-            input.addEventListener("focus", () => {
-                if (window.innerWidth <= 768) {
-                    input.scrollIntoView({ behavior: "smooth" });
-                    window.scrollBy(0, 20); // 20px上にスクロール
-                }
-            });
-        }
-    }, []);
+	useEffect(() => {
+		const input = document.querySelector("input[type='text']");
+		if (input) {
+			input.addEventListener("focus", () => {
+				if (window.innerWidth <= 768) {
+					input.scrollIntoView({ behavior: "smooth" });
+					window.scrollBy(0, 20); // 20px上にスクロール
+				}
+			});
+		}
+	}, []);
 
-    if (!currentBlock) return <p>エラー: 階が見つかりません</p>;
+	if (!currentBlock) return <p>エラー: 階が見つかりません</p>;
 
-    return (
-        <div>
-            {/* タイトル */}
-            <h1>校内マップ</h1>
+	return (
+		<div>
+			{/* タイトル */}
+			<h1>校内マップ</h1>
 
-            {/* 検索バー */}
-            <SearchBar
-                search={search}
-                setSearch={setSearch}
-                handleSearch={handleSearch}
-            />
+			{/* 検索バー */}
+			<SearchBar
+				search={search}
+				setSearch={setSearch}
+				handleSearch={handleSearch}
+			/>
 
-            {/* エラーメッセージを表示 */}
-            {errorMessage && <p>{errorMessage}</p>}
+			{/* エラーメッセージを表示 */}
+			{errorMessage && <p>{errorMessage}</p>}
 
-            {/* 階の切り替えボタン */}
-            <BlockSwitcher
-                currentBlockId={blockId}
-                blocks={blocks}
-                setBlockId={setBlockId}
-            />
+			{/* 階の切り替えボタン */}
+			<BlockSwitcher
+				currentBlockId={blockId}
+				blocks={blocks}
+				setBlockId={setBlockId}
+			/>
 
-            <div>
-                {/* マップ */}
-                <Map
-                    currentBlock={currentBlock}
-                    selectedRoom={selectedRoom}
-                    showSubName={showSubName}
-                    highlighted={highlighted}
-                    setRoom={handleRoomSelect}
-                    setBlockId={setBlockId}
-                />
+			<div>
+				{/* マップ */}
+				<Map
+					currentBlock={currentBlock}
+					selectedRoom={selectedRoom}
+					showSubName={showSubName}
+					highlighted={highlighted}
+					setRoom={handleRoomSelect}
+					setBlockId={setBlockId}
+				/>
 
-                {/* イベント部屋スイッチ */}
-                <NameSwitch
-                    showSubName={showSubName}
-                    setShowSubName={setShowSubName}
-                />
+				{/* イベント部屋スイッチ */}
+				<NameSwitch
+					showSubName={showSubName}
+					setShowSubName={setShowSubName}
+				/>
 
-                <div>
-                    {/* 部屋リスト */}
-                    <RoomList
-                        rooms={currentBlock.groups.flatMap(group => group.rooms)}
-                        setRoom={handleRoomSelect}
-                        showSubName={showSubName}
-                        selectedRoom={selectedRoom}
-                    />
+				<div>
+					{/* 部屋リスト */}
+					<RoomList
+						rooms={currentBlock.groups.flatMap(
+							(group) => group.rooms
+						)}
+						setRoom={handleRoomSelect}
+						showSubName={showSubName}
+						selectedRoom={selectedRoom}
+					/>
 
-                    {/* 部屋詳細 */}
-                    {/*<RoomDetails
+					{/* 部屋詳細 */}
+					{/*<RoomDetails
                         selectedRoom={selectedRoom}
                     />*/}
-                </div>
-            </div>
-        </div>
-    );
+				</div>
+			</div>
+		</div>
+	);
 };
 
 export default App;
