@@ -1,3 +1,10 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	border: 0;
+	padding: 0;
+}
+
 html {
 	margin: 0;
 	border: 0;
@@ -66,6 +73,8 @@ body {
 }
 
 .block-switcher {
+	grid-template: "block-switcher-tabs block-switcher-tabs" 50px
+	floor-switcher-box;
 	margin: 0;
 	border: 0;
 	padding: 0;
@@ -123,6 +132,7 @@ body {
 }
 
 .make-map {
+	position: relative;
 	margin: 0;
 	border: 0;
 	padding: 2rem;
@@ -131,4 +141,8 @@ body {
 	max-width: 100%;
 	max-height: 100vw;
 	box-sizing: border-box;
+}
+
+.make-room {
+	position: absolute;
 }

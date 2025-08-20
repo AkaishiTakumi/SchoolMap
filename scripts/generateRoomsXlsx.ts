@@ -3,7 +3,7 @@ import * as XLSX from "xlsx";
 import * as path from "path";
 import * as fs from "fs";
 import { fileURLToPath } from 'url';
-import { buildings } from "../src/data/rooms_backup";
+import { buildings } from "../src/data/rooms";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);

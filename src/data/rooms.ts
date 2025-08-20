@@ -1,4 +1,4 @@
-export type Room={id:number;name:string;roomClass:"ホームルーム"|"研究室"|"卒研室"|"WC"|"廊下"|"";shapes:"square"|"L-shape"|"polygon";parameters:number[];fill:string;};export type Floor={id:number;rooms:Room[];};export type Building={id:number;name:string;floors:Floor[];};
+export type Room={id:number;name:string;roomClass:string;shapes:"square"|"L-shape"|"polygon";parameters:number[];fill:string;};export type Floor={id:number;rooms:Room[];};export type Building={id:number;name:string;floors:Floor[];};
 export const buildings: Building[] = [
   {
     "id": 1,
@@ -9,6 +9,97 @@ export const buildings: Building[] = [
         "rooms": [
           {
             "id": 1,
+            "name": "廊下",
+            "roomClass": "廊下",
+            "fill": "red",
+            "shapes": "square",
+            "parameters": [
+              360,
+              0,
+              1210,
+              60
+            ]
+          },
+          {
+            "id": 2,
+            "name": "廊下",
+            "roomClass": "廊下",
+            "fill": "blue",
+            "shapes": "square",
+            "parameters": [
+              980,
+              0,
+              160,
+              240
+            ]
+          },
+          {
+            "id": 3,
+            "name": "廊下",
+            "roomClass": "廊下",
+            "fill": "green",
+            "shapes": "square",
+            "parameters": [
+              450,
+              860,
+              1030,
+              60
+            ]
+          },
+          {
+            "id": 4,
+            "name": "廊下",
+            "roomClass": "廊下",
+            "fill": "yellow",
+            "shapes": "square",
+            "parameters": [
+              980,
+              60,
+              30,
+              2000
+            ]
+          },
+          {
+            "id": 5,
+            "name": "廊下",
+            "roomClass": "廊下",
+            "fill": "purple",
+            "shapes": "square",
+            "parameters": [
+              980,
+              1100,
+              120,
+              90
+            ]
+          },
+          {
+            "id": 6,
+            "name": "廊下",
+            "roomClass": "廊下",
+            "fill": "orange",
+            "shapes": "square",
+            "parameters": [
+              980,
+              1720,
+              120,
+              240
+            ]
+          },
+          {
+            "id": 7,
+            "name": "廊下",
+            "roomClass": "廊下",
+            "fill": "red",
+            "shapes": "square",
+            "parameters": [
+              480,
+              1810,
+              90,
+              120
+            ]
+          },
+          {
+            "id": 8,
             "name": "控室",
             "roomClass": "",
             "fill": "lightblue",
@@ -21,7 +112,7 @@ export const buildings: Building[] = [
             ]
           },
           {
-            "id": 2,
+            "id": 9,
             "name": "女性教員用WC",
             "roomClass": "WC",
             "fill": "pink",
@@ -34,7 +125,7 @@ export const buildings: Building[] = [
             ]
           },
           {
-            "id": 3,
+            "id": 10,
             "name": "総務課事務室",
             "roomClass": "",
             "fill": "lightblue",
@@ -47,7 +138,7 @@ export const buildings: Building[] = [
             ]
           },
           {
-            "id": 4,
+            "id": 11,
             "name": "マルチパーパスルーム（情報）",
             "roomClass": "",
             "fill": "lightblue",
@@ -60,7 +151,7 @@ export const buildings: Building[] = [
             ]
           },
           {
-            "id": 5,
+            "id": 12,
             "name": "男子WC",
             "roomClass": "WC",
             "fill": "pink",
@@ -73,7 +164,7 @@ export const buildings: Building[] = [
             ]
           },
           {
-            "id": 6,
+            "id": 13,
             "name": "女子WC",
             "roomClass": "WC",
             "fill": "pink",
@@ -86,7 +177,7 @@ export const buildings: Building[] = [
             ]
           },
           {
-            "id": 7,
+            "id": 14,
             "name": "多目的WC",
             "roomClass": "WC",
             "fill": "pink",
@@ -99,7 +190,7 @@ export const buildings: Building[] = [
             ]
           },
           {
-            "id": 8,
+            "id": 15,
             "name": "準備室",
             "roomClass": "",
             "fill": "lightblue",
@@ -112,7 +203,7 @@ export const buildings: Building[] = [
             ]
           },
           {
-            "id": 9,
+            "id": 16,
             "name": "マルチパーパスルーム（ものづくり）",
             "roomClass": "",
             "fill": "lightblue",
@@ -125,7 +216,7 @@ export const buildings: Building[] = [
             ]
           },
           {
-            "id": 10,
+            "id": 17,
             "name": "外来者用WC",
             "roomClass": "WC",
             "fill": "pink",
@@ -138,7 +229,7 @@ export const buildings: Building[] = [
             ]
           },
           {
-            "id": 11,
+            "id": 18,
             "name": "材料力学第1実験室",
             "roomClass": "",
             "fill": "lightblue",
@@ -151,7 +242,7 @@ export const buildings: Building[] = [
             ]
           },
           {
-            "id": 12,
+            "id": 19,
             "name": "塩田研究室",
             "roomClass": "研究室",
             "fill": "lightblue",
@@ -164,7 +255,7 @@ export const buildings: Building[] = [
             ]
           },
           {
-            "id": 13,
+            "id": 20,
             "name": "機械卒研室",
             "roomClass": "卒研室",
             "fill": "lightblue",
@@ -177,7 +268,7 @@ export const buildings: Building[] = [
             ]
           },
           {
-            "id": 14,
+            "id": 21,
             "name": "教室4ーM",
             "roomClass": "ホームルーム",
             "fill": "lightblue",
@@ -190,7 +281,7 @@ export const buildings: Building[] = [
             ]
           },
           {
-            "id": 15,
+            "id": 22,
             "name": "電気室",
             "roomClass": "",
             "fill": "lightblue",
@@ -203,7 +294,7 @@ export const buildings: Building[] = [
             ]
           },
           {
-            "id": 16,
+            "id": 23,
             "name": "教室3ーS",
             "roomClass": "ホームルーム",
             "fill": "lightblue",
@@ -216,7 +307,7 @@ export const buildings: Building[] = [
             ]
           },
           {
-            "id": 17,
+            "id": 24,
             "name": "廣木研究室",
             "roomClass": "研究室",
             "fill": "lightblue",
@@ -229,7 +320,7 @@ export const buildings: Building[] = [
             ]
           },
           {
-            "id": 18,
+            "id": 25,
             "name": "関研究室",
             "roomClass": "研究室",
             "fill": "lightblue",
@@ -242,7 +333,7 @@ export const buildings: Building[] = [
             ]
           },
           {
-            "id": 19,
+            "id": 26,
             "name": "材料実験室",
             "roomClass": "",
             "fill": "lightblue",
@@ -255,7 +346,7 @@ export const buildings: Building[] = [
             ]
           },
           {
-            "id": 20,
+            "id": 27,
             "name": "材料力学第2実験室",
             "roomClass": "",
             "fill": "lightblue",
@@ -268,7 +359,7 @@ export const buildings: Building[] = [
             ]
           },
           {
-            "id": 21,
+            "id": 28,
             "name": "精密工作実験室",
             "roomClass": "",
             "fill": "lightblue",
@@ -281,7 +372,7 @@ export const buildings: Building[] = [
             ]
           },
           {
-            "id": 22,
+            "id": 29,
             "name": "男子WC",
             "roomClass": "WC",
             "fill": "pink",
@@ -294,7 +385,7 @@ export const buildings: Building[] = [
             ]
           },
           {
-            "id": 23,
+            "id": 30,
             "name": "女子WC",
             "roomClass": "WC",
             "fill": "pink",
@@ -307,7 +398,7 @@ export const buildings: Building[] = [
             ]
           },
           {
-            "id": 24,
+            "id": 31,
             "name": "生命工学実験室",
             "roomClass": "",
             "fill": "lightblue",
@@ -320,7 +411,7 @@ export const buildings: Building[] = [
             ]
           },
           {
-            "id": 25,
+            "id": 32,
             "name": "前澤研究室",
             "roomClass": "研究室",
             "fill": "lightblue",
@@ -333,7 +424,7 @@ export const buildings: Building[] = [
             ]
           },
           {
-            "id": 26,
+            "id": 33,
             "name": "マルチパーパスルーム（生物）",
             "roomClass": "",
             "fill": "lightblue",
@@ -346,20 +437,21 @@ export const buildings: Building[] = [
             ]
           },
           {
-            "id": 27,
+            "id": 34,
             "name": "流体第1実験室",
             "roomClass": "",
             "fill": "lightblue",
             "shapes": "square",
             "parameters": [
-              0,
+              //0,
+              100,
               0,
               360,
               150
             ]
           },
           {
-            "id": 28,
+            "id": 35,
             "name": "流体準備室",
             "roomClass": "",
             "fill": "lightblue",
@@ -372,7 +464,7 @@ export const buildings: Building[] = [
             ]
           },
           {
-            "id": 29,
+            "id": 36,
             "name": "加藤研究室",
             "roomClass": "研究室",
             "fill": "lightblue",
@@ -385,7 +477,7 @@ export const buildings: Building[] = [
             ]
           },
           {
-            "id": 30,
+            "id": 37,
             "name": "山田（貴）研究室",
             "roomClass": "研究室",
             "fill": "lightblue",
@@ -398,7 +490,7 @@ export const buildings: Building[] = [
             ]
           },
           {
-            "id": 31,
+            "id": 38,
             "name": "高木研究室",
             "roomClass": "研究室",
             "fill": "lightblue",
@@ -411,7 +503,7 @@ export const buildings: Building[] = [
             ]
           },
           {
-            "id": 32,
+            "id": 39,
             "name": "小西研究室",
             "roomClass": "研究室",
             "fill": "lightblue",
@@ -424,7 +516,7 @@ export const buildings: Building[] = [
             ]
           },
           {
-            "id": 33,
+            "id": 40,
             "name": "構造生物学実験室",
             "roomClass": "",
             "fill": "lightblue",
@@ -437,7 +529,7 @@ export const buildings: Building[] = [
             ]
           },
           {
-            "id": 34,
+            "id": 41,
             "name": "柴田研究室",
             "roomClass": "研究室",
             "fill": "lightblue",
@@ -450,7 +542,7 @@ export const buildings: Building[] = [
             ]
           },
           {
-            "id": 35,
+            "id": 42,
             "name": "西川研究室",
             "roomClass": "研究室",
             "fill": "lightblue",
@@ -463,7 +555,7 @@ export const buildings: Building[] = [
             ]
           },
           {
-            "id": 36,
+            "id": 43,
             "name": "教室4ーS",
             "roomClass": "ホームルーム",
             "fill": "lightblue",
@@ -476,7 +568,7 @@ export const buildings: Building[] = [
             ]
           },
           {
-            "id": 37,
+            "id": 44,
             "name": "分子分光学実験室",
             "roomClass": "",
             "fill": "lightblue",
@@ -489,7 +581,7 @@ export const buildings: Building[] = [
             ]
           },
           {
-            "id": 38,
+            "id": 45,
             "name": "分子生物学実験室",
             "roomClass": "",
             "fill": "lightblue",
@@ -502,7 +594,7 @@ export const buildings: Building[] = [
             ]
           },
           {
-            "id": 39,
+            "id": 46,
             "name": "電気機械実験室",
             "roomClass": "",
             "fill": "lightblue",
@@ -512,97 +604,6 @@ export const buildings: Building[] = [
               0,
               360,
               240
-            ]
-          },
-          {
-            "id": 40,
-            "name": "廊下",
-            "roomClass": "廊下",
-            "fill": "#ccc",
-            "shapes": "square",
-            "parameters": [
-              360,
-              0,
-              1210,
-              60
-            ]
-          },
-          {
-            "id": 41,
-            "name": "廊下",
-            "roomClass": "廊下",
-            "fill": "#ccc",
-            "shapes": "square",
-            "parameters": [
-              980,
-              0,
-              150,
-              240
-            ]
-          },
-          {
-            "id": 42,
-            "name": "廊下",
-            "roomClass": "廊下",
-            "fill": "#ccc",
-            "shapes": "square",
-            "parameters": [
-              450,
-              860,
-              1030,
-              60
-            ]
-          },
-          {
-            "id": 43,
-            "name": "廊下",
-            "roomClass": "廊下",
-            "fill": "#ccc",
-            "shapes": "square",
-            "parameters": [
-              980,
-              60,
-              120,
-              90
-            ]
-          },
-          {
-            "id": 44,
-            "name": "廊下",
-            "roomClass": "廊下",
-            "fill": "#ccc",
-            "shapes": "square",
-            "parameters": [
-              980,
-              1100,
-              120,
-              90
-            ]
-          },
-          {
-            "id": 45,
-            "name": "廊下",
-            "roomClass": "廊下",
-            "fill": "#ccc",
-            "shapes": "square",
-            "parameters": [
-              980,
-              1720,
-              120,
-              240
-            ]
-          },
-          {
-            "id": 46,
-            "name": "廊下",
-            "roomClass": "廊下",
-            "fill": "#ccc",
-            "shapes": "square",
-            "parameters": [
-              480,
-              1810,
-              90,
-              120
             ]
           }
         ]
@@ -1681,6 +1682,30 @@ export const buildings: Building[] = [
               240
             ]
           }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "北館",
+    "floors": [
+      {
+        "id": 1,
+        "rooms": [
+          {
+            "id": 1,
+            "name": "廊下",
+            "roomClass": "廊下",
+            "fill": "red",
+            "shapes": "square",
+            "parameters": [
+              360,
+              0,
+              1210,
+              60
+            ]
+          },
         ]
       }
     ]

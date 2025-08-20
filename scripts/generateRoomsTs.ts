@@ -40,7 +40,7 @@ function readExcel(): RawRow[] {
 function generateTs(
 	buildings: Building[]
 ): Promise<{ error: { message: string } | null }> {
-	const out = `export type Room={id:number;name:string;roomClass:"ホームルーム"|"研究室"|"卒研室"|"WC"|"廊下"|"";shapes:"square"|"L-shape"|"polygon";parameters:number[];fill:string;};export type Floor={id:number;rooms:Room[];};export type Building={id:number;name:string;floors:Floor[];};
+	const out = `export type Room={id:number;name:string;roomClass:string;shapes:"square"|"L-shape"|"polygon";parameters:number[];fill:string;};export type Floor={id:number;rooms:Room[];};export type Building={id:number;name:string;floors:Floor[];};
 export const buildings: Building[] = ${JSON.stringify(buildings, null, 2)};\n`;
 	return new Promise((resolve) => {
 		fs.writeFile(path.resolve(__dirname, '../src/data/rooms.ts'), out, (err) => {
